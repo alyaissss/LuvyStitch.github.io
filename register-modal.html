@@ -1,0 +1,51 @@
+<!-- register-modal.html -->
+<div
+  id="registerModal"
+  class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50"
+>
+  <div class="bg-white rounded-3xl p-8 w-full max-w-lg mx-4">
+    <div class="flex justify-between items-center mb-6">
+      <h2 class="text-2xl font-bold text-primary">Register Now</h2>
+      <button onclick="closeRegisterModal()" class="text-2xl">&times;</button>
+    </div>
+
+    <!-- Informasi Event -->
+    <div class="bg-surface-container rounded-2xl p-4 mb-6">
+      <h3 id="modalEventName" class="font-bold text-lg"></h3>
+
+      <div class="mt-3 space-y-1 text-sm">
+        <p><strong>Tanggal:</strong> <span id="modalEventDate"></span></p>
+        <p><strong>Waktu:</strong> <span id="modalEventTime"></span></p>
+        <p><strong>Tempat:</strong> LuvyStitch Community</p>
+      </div>
+    </div>
+
+    <form id="registerForm" class="space-y-4">
+      <div>
+        <label class="block mb-1">Nama</label>
+        <input type="text" required class="w-full border rounded-xl p-3" />
+      </div>
+
+      <div>
+        <label class="block mb-1">Email</label>
+        <input type="email" required class="w-full border rounded-xl p-3" />
+      </div>
+
+      <div id="paymentSection" class="hidden">
+        <label class="block mb-1">Upload Bukti Pembayaran</label>
+        <input
+          type="file"
+          accept="image/*,.pdf"
+          class="w-full border rounded-xl p-3"
+        />
+      </div>
+
+      <button
+        class="w-full bg-primary text-white py-3 rounded-full"
+        type="submit"
+      >
+        Register
+      </button>
+    </form>
+  </div>
+</div>

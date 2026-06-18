@@ -1,0 +1,1273 @@
+<!doctype html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>LuvyStitch Community</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed-dim": "#e7bbc6",
+              outline: "#817476",
+              "surface-container-highest": "#e9e1dc",
+              "surface-bright": "#fff8f5",
+              "on-error-container": "#93000a",
+              "on-surface-variant": "#4f4446",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "on-secondary-fixed": "#221045",
+              "on-primary": "#ffffff",
+              "surface-container-low": "#fbf2ed",
+              "on-tertiary-fixed": "#1c1c1a",
+              "on-surface": "#1e1b18",
+              "on-secondary-fixed-variant": "#4e3d74",
+              primary: "#78555e",
+              "primary-container": "#ffd1dc",
+              "secondary-fixed": "#eaddff",
+              "on-primary-container": "#7a5761",
+              "surface-container-high": "#efe6e2",
+              "on-background": "#1e1b18",
+              "tertiary-fixed": "#e5e2df",
+              "on-tertiary-container": "#61615e",
+              error: "#ba1a1a",
+              "surface-container": "#f5ece7",
+              "outline-variant": "#d3c3c5",
+              "surface-variant": "#e9e1dc",
+              "on-primary-fixed-variant": "#5e3e47",
+              tertiary: "#5f5e5c",
+              "error-container": "#ffdad6",
+              "inverse-surface": "#34302c",
+              background: "#fff8f5",
+              "surface-tint": "#78555e",
+              "on-secondary": "#ffffff",
+              secondary: "#67558d",
+              "on-error": "#ffffff",
+              "secondary-container": "#d4bfff",
+              "secondary-fixed-dim": "#d1bcfc",
+              "inverse-primary": "#e7bbc6",
+              "tertiary-fixed-dim": "#c8c6c3",
+              surface: "#fff8f5",
+              "on-tertiary-fixed-variant": "#474745",
+              "tertiary-container": "#dfdcd9",
+              "surface-dim": "#e1d8d4",
+              "on-primary-fixed": "#2d141c",
+              "on-secondary-container": "#5c4b82",
+              "primary-fixed": "#ffd9e2",
+              "inverse-on-surface": "#f8efea",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              margin: "48px",
+              gutter: "24px",
+              "stack-sm": "12px",
+              "stack-lg": "48px",
+              "stack-md": "24px",
+              "container-max": "1280px",
+              base: "8px",
+            },
+            fontFamily: {
+              "headline-md": ["Playfair Display"],
+              "body-md": ["Montserrat"],
+              "headline-lg": ["Playfair Display"],
+              "body-lg": ["Montserrat"],
+              "display-lg": ["Playfair Display"],
+              "label-sm": ["Montserrat"],
+              "body-sm": ["Montserrat"],
+              "label-lg": ["Montserrat"],
+              "display-md": ["Playfair Display"],
+            },
+            fontSize: {
+              "headline-md": ["22px", { lineHeight: "1.3", fontWeight: "600" }],
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-lg": ["28px", { lineHeight: "1.3", fontWeight: "600" }],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "display-lg": [
+                "48px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-sm": [
+                "12px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "0.05em",
+                  fontWeight: "500",
+                },
+              ],
+              "body-sm": ["14px", { lineHeight: "1.5", fontWeight: "400" }],
+              "label-lg": [
+                "14px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "0.05em",
+                  fontWeight: "600",
+                },
+              ],
+              "display-md": ["36px", { lineHeight: "1.2", fontWeight: "700" }],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #fff8f5;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+        vertical-align: middle;
+      }
+      .card-shadow {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      }
+    </style>
+  </head>
+  <body class="font-body-md text-on-background">
+    <!-- NAVBAR CONTAINER -->
+    <div id="navbar-container" class="fixed top-0 left-0 right-0 z-50"></div>
+    <script src="load-navbar.js"></script>
+
+    <main
+      class="pt-20 max-w-container-max mx-auto px-margin pt-stack-lg pb-stack-lg"
+    >
+      <!-- Hero Section -->
+      <section class="pt-20 mb-stack-lg">
+        <div
+          class="flex flex-col md:flex-row items-center gap-gutter bg-secondary-container/30 rounded-[32px] p-10 overflow-hidden relative"
+        >
+          <div class="flex-1 z-10">
+            <span
+              class="inline-block px-4 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-sm mb-4"
+              >MEMBER HUB</span
+            >
+            <h1
+              class="font-display-lg text-display-lg text-primary mb-6 leading-tight"
+            >
+              Where Every Stitch <br />Tells a Story.
+            </h1>
+            <p
+              class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mb-8"
+            >
+              Bergabunglah dengan sesama pecinta rajut, bagikan progres karyamu,
+              pelajari teknik baru, dan temukan inspirasi dalam setiap jahitan.
+            </p>
+            <div class="flex gap-4">
+              <button
+                id="hero-join"
+                class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-lg hover:scale-110 transition-transform shadow-lg"
+              >
+                Join
+              </button>
+              <button
+                class="border-2 border-primary text-primary px-8 py-3 rounded-full font-label-lg hover:scale-110 hover:bg-primary/5 transition-transform"
+                onclick="
+                  document
+                    .getElementById('events')
+                    .scrollIntoView({ behavior: 'smooth' })
+                "
+              >
+                View All Events
+              </button>
+            </div>
+          </div>
+          <div class="flex-1 relative h-[400px] w-full hidden md:block">
+            <img
+              alt="Knitting Materials"
+              class="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-xl"
+              src="img/komunitas.png"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Member -->
+      <div
+        class="mb-stack-lg bg-white rounded-[24px] card-shadow overflow-hidden flex flex-col md:flex-row p-8 gap-8 border border-outline-variant/30"
+      >
+        <div class="md:w-1/3">
+          <div class="aspect-square rounded-2xl overflow-hidden">
+            <img
+              alt="Featured Member"
+              class="w-full h-full object-cover"
+              src="img/saya.png"
+            />
+            <div class="absolute bottom-4 left-12">
+              <span
+                class="bg-primary/90 text-white px-3 py-1 rounded-full text-label-sm"
+                >The Owner</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col justify-center">
+          <h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">
+            Cantik Alya Isnaeni
+          </h2>
+          <p class="font-label-sm text-primary mb-4">202343501574</p>
+          <p class="font-body-md text-on-surface-variant italic mb-6">
+            "Merajut bukan hanya tentang menciptakan sesuatu yang indah, tetapi
+            juga tentang menikmati setiap proses yang membawanya menjadi nyata."
+          </p>
+          <div class="flex items-center gap-6">
+            <div>
+              <span class="block font-headline-md text-primary">142</span>
+              <span class="text-label-sm text-outline">Patterns Completed</span>
+            </div>
+            <div class="h-10 w-px bg-outline-variant"></div>
+            <div>
+              <span class="block font-headline-md text-primary">3.2k</span>
+              <span class="text-label-sm text-outline">Helpful Votes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vision & Mission -->
+      <section
+        class="bg-secondary-container/30 py-stack-lg mb-stack-lg w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]"
+      >
+        <div class="max-w-container-max mx-auto px-margin">
+          <!-- Section Header -->
+          <div class="text-center mb-10">
+            <h2 class="font-display-md text-display-md text-on-surface">
+              Vision & Mission
+            </h2>
+            <p class="font-body-md text-on-surface-variant mt-2">
+              Bersama membangun komunitas rajut yang kreatif, kolaboratif, dan
+              inspiratif untuk menghasilkan karya yang bernilai.
+            </p>
+          </div>
+
+          <!-- Vision Card -->
+          <div
+            class="bg-white rounded-[24px] p-8 card-shadow border border-outline-variant/30 mb-10 text-center"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-5 bg-secondary-container/50 rounded-2xl flex items-center justify-center"
+            >
+              <span class="material-symbols-outlined text-secondary text-4xl">
+                auto_awesome
+              </span>
+            </div>
+
+            <h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">
+              Our Vision
+            </h3>
+
+            <p
+              class="font-body-md text-on-surface-variant max-w-3xl mx-auto leading-relaxed"
+            >
+              Menjadi komunitas merajut yang inovatif dan inklusif, tempat
+              setiap individu dapat mengembangkan kreativitas, berbagi
+              pengetahuan, serta menghasilkan karya handmade yang bernilai dan
+              menginspirasi masyarakat luas.
+            </p>
+          </div>
+
+          <!-- Mission Title -->
+          <div class="text-center mb-8">
+            <h3 class="font-headline-lg text-headline-lg text-on-surface">
+              Our Mission
+            </h3>
+          </div>
+
+          <!-- Mission Cards -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Mission 1 -->
+            <div
+              class="bg-white p-6 rounded-2xl border border-outline-variant/30 hover:border-primary/40 transition-all card-shadow"
+            >
+              <div
+                class="w-12 h-12 bg-secondary-container/50 rounded-xl flex items-center justify-center mb-4"
+              >
+                <span class="material-symbols-outlined text-secondary">
+                  school
+                </span>
+              </div>
+
+              <h4 class="font-headline-md text-on-surface mb-2">
+                Learning Together
+              </h4>
+
+              <p class="font-body-sm text-on-surface-variant">
+                Menyediakan ruang belajar dan berbagi teknik merajut untuk semua
+                kalangan agar setiap anggota dapat terus berkembang.
+              </p>
+            </div>
+
+            <!-- Mission 2 -->
+            <div
+              class="bg-white p-6 rounded-2xl border border-outline-variant/30 hover:border-primary/40 transition-all card-shadow"
+            >
+              <div
+                class="w-12 h-12 bg-secondary-container/50 rounded-xl flex items-center justify-center mb-4"
+              >
+                <span class="material-symbols-outlined text-secondary">
+                  event
+                </span>
+              </div>
+
+              <h4 class="font-headline-md text-on-surface mb-2">
+                Creative Workshops
+              </h4>
+
+              <p class="font-body-sm text-on-surface-variant">
+                Mengadakan workshop, diskusi, dan berbagai kegiatan komunitas
+                secara rutin untuk meningkatkan keterampilan anggota.
+              </p>
+            </div>
+
+            <!-- Mission 3 -->
+            <div
+              class="bg-white p-6 rounded-2xl border border-outline-variant/30 hover:border-primary/40 transition-all card-shadow"
+            >
+              <div
+                class="w-12 h-12 bg-secondary-container/50 rounded-xl flex items-center justify-center mb-4"
+              >
+                <span class="material-symbols-outlined text-secondary">
+                  groups
+                </span>
+              </div>
+
+              <h4 class="font-headline-md text-on-surface mb-2">
+                Collaboration
+              </h4>
+
+              <p class="font-body-sm text-on-surface-variant">
+                Mendorong kolaborasi antaranggota untuk menghasilkan karya rajut
+                yang kreatif, inovatif, dan berkualitas tinggi.
+              </p>
+            </div>
+          </div>
+
+          <!-- Last 2 Mission Cards (Centered) -->
+          <div class="flex flex-wrap justify-center gap-6 mt-6">
+            <!-- Mission 4 -->
+            <div
+              class="bg-white p-6 rounded-2xl border border-outline-variant/30 hover:border-primary/40 transition-all card-shadow w-full md:w-[calc(50%-12px)] lg:w-[31.5%]"
+            >
+              <div
+                class="w-12 h-12 bg-secondary-container/50 rounded-xl flex items-center justify-center mb-4"
+              >
+                <span class="material-symbols-outlined text-secondary">
+                  favorite
+                </span>
+              </div>
+
+              <h4 class="font-headline-md text-on-surface mb-2">
+                Supportive Community
+              </h4>
+
+              <p class="font-body-sm text-on-surface-variant">
+                Membangun lingkungan yang ramah, suportif, dan inklusif bagi
+                pemula maupun perajut berpengalaman.
+              </p>
+            </div>
+
+            <!-- Mission 5 -->
+            <div
+              class="bg-white p-6 rounded-2xl border border-outline-variant/30 hover:border-primary/40 transition-all card-shadow w-full md:w-[calc(50%-12px)] lg:w-[31.5%]"
+            >
+              <div
+                class="w-12 h-12 bg-secondary-container/50 rounded-xl flex items-center justify-center mb-4"
+              >
+                <span class="material-symbols-outlined text-secondary">
+                  storefront
+                </span>
+              </div>
+
+              <h4 class="font-headline-md text-on-surface mb-2">
+                Empowering Handmade
+              </h4>
+
+              <p class="font-body-sm text-on-surface-variant">
+                Memperkenalkan dan mendukung produk handmade lokal agar memiliki
+                nilai ekonomi serta dampak sosial yang lebih luas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Community Forums -->
+      <section class="mb-stack-lg">
+        <div class="flex justify-between items-end mb-stack-md">
+          <div>
+            <h2 class="font-display-md text-display-md text-on-surface">
+              Community Forums
+            </h2>
+            <p class="font-body-md text-on-surface-variant">
+              Temukan keahlianmu di dalam kategori kerajinan yang kami sediakan.
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            class="bg-white p-6 rounded-2xl border border-outline-variant/30 hover:border-primary/40 transition-all group card-shadow cursor-pointer"
+          >
+            <div
+              class="w-12 h-12 bg-secondary-container/50 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+            >
+              <span class="material-symbols-outlined text-secondary"
+                >palette</span
+              >
+            </div>
+            <h4 class="font-headline-md text-on-surface mb-2">
+              Technique & Tips
+            </h4>
+            <p class="font-body-sm text-on-surface-variant mb-4">
+              Pelajari teknik rajut yang lebih beragam dengan dukungan dan
+              motivasi dari sesama anggota.
+            </p>
+            <div
+              class="flex items-center justify-between pt-4 border-t border-outline-variant/20"
+            >
+              <span class="text-label-sm text-outline">12.5k Threads</span>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-2xl border border-outline-variant/30 hover:border-primary/40 transition-all group card-shadow cursor-pointer"
+          >
+            <div
+              class="w-12 h-12 bg-secondary-container/50 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+            >
+              <span class="material-symbols-outlined text-secondary"
+                >shopping_basket</span
+              >
+            </div>
+            <h4 class="font-headline-md text-on-surface mb-2">
+              Yarn Stash & Finds
+            </h4>
+            <p class="font-body-sm text-on-surface-variant mb-4">
+              Bagikan hasil karya, rekomendasi bahan rajut, serta tips yang
+              bermanfaat untuk anggota lainnya.
+            </p>
+            <div
+              class="flex items-center justify-between pt-4 border-t border-outline-variant/20"
+            >
+              <span class="text-label-sm text-outline">8.2k Threads</span>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-2xl border border-outline-variant/30 hover:border-primary/40 transition-all group card-shadow cursor-pointer"
+          >
+            <div
+              class="w-12 h-12 bg-secondary-container/50 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+            >
+              <span class="material-symbols-outlined text-secondary"
+                >volunteer_activism</span
+              >
+            </div>
+            <h4 class="font-headline-md text-on-surface mb-2">
+              Charity Knitting
+            </h4>
+            <p class="font-body-sm text-on-surface-variant mb-4">
+              Ikuti berbagai proyek sosial dan kegiatan amal melalui karya rajut
+              yang bermakna.
+            </p>
+            <div
+              class="flex items-center justify-between pt-4 border-t border-outline-variant/20"
+            >
+              <span class="text-label-sm text-outline">3.1k Threads</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Upcoming Workshops -->
+      <section
+        id="events"
+        class="py-stack-lg bg-surface transition-all duration-1000 opacity-100 translate-y-0"
+      >
+        <div class="max-w-container-max mx-auto px-margin">
+          <div class="text-center mb-16">
+            <h2 class="font-display-md text-display-md text-on-surface mb-4">
+              Upcoming Workshops
+            </h2>
+            <div
+              class="w-24 h-1 bg-primary-container mx-auto rounded-full"
+            ></div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+            <div
+              class="bg-surface-container-low rounded-[2rem] overflow-hidden flex flex-col md:flex-row hover:shadow-xl transition-shadow duration-300 border border-outline-variant/30"
+            >
+              <div class="md:w-2/5 relative">
+                <img
+                  alt="Cable Knitting"
+                  class="h-full w-full object-cover"
+                  src="img/workshop1.jpg"
+                />
+                <div
+                  class="absolute top-4 left-4 bg-primary-container text-on-primary-container px-4 py-1 rounded-full text-label-sm font-label-sm"
+                >
+                  17 Juli 2026
+                </div>
+              </div>
+              <div class="md:w-3/5 p-8 flex flex-col justify-center">
+                <h3
+                  class="font-headline-lg text-headline-lg text-on-surface mb-3"
+                >
+                  Cozy Crochet for Beginners
+                </h3>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant mb-6"
+                >
+                  Belajar dasar-dasar merajut untuk pemula, mulai dari mengenal
+                  alat dan bahan hingga membuat proyek sederhana yang cantik dan
+                  fungsional.
+                </p>
+                <div class="flex items-center justify-between mt-auto">
+                  <span class="font-headline-md text-headline-md text-primary"
+                    >Free</span
+                  >
+                  <button
+                    class="bg-primary-container text-on-primary-container px-6 py-3 rounded-xl font-label-lg text-label-lg hover:scale-102 transition-transform active:scale-95"
+                    onclick="
+                      openRegisterModal({
+                        name: 'Cozy Crochet for Beginners',
+                        date: '17 Juli 2026',
+                        time: '10.00 WIB',
+                        isPaid: false,
+                      })
+                    "
+                  >
+                    Register Now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-surface-container-low rounded-[2rem] overflow-hidden flex flex-col md:flex-row hover:shadow-xl transition-shadow duration-300 border border-outline-variant/30"
+            >
+              <div class="md:w-2/5 relative">
+                <img
+                  alt="Home Textiles"
+                  class="h-full w-full object-cover"
+                  src="img/workshop2.jpg"
+                />
+                <div
+                  class="absolute top-4 left-4 bg-primary-container text-on-primary-container px-4 py-1 rounded-full text-label-sm font-label-sm"
+                >
+                  05 Agustus 2026
+                </div>
+              </div>
+              <div class="md:w-3/5 p-8 flex flex-col justify-center">
+                <h3
+                  class="font-headline-lg text-headline-lg text-on-surface mb-3"
+                >
+                  Handmade Hair Clip Class
+                </h3>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant mb-6"
+                >
+                  Kreasikan jepit rambut rajut dengan berbagai pilihan warna dan
+                  motif. Peserta akan belajar membuat aksesori rambut handmade
+                  yang cantik dan unik.
+                </p>
+                <div class="flex items-center justify-between mt-auto">
+                  <span class="font-headline-md text-headline-md text-primary"
+                    >25k</span
+                  >
+                  <button
+                    class="bg-primary-container text-on-primary-container px-6 py-3 rounded-xl font-label-lg text-label-lg hover:scale-102 transition-transform active:scale-95"
+                    onclick="
+                      openRegisterModal({
+                        name: 'Handmade Hair Clip Class',
+                        date: '05 Agustus 2026',
+                        time: '13.00 WIB',
+                        isPaid: true,
+                      })
+                    "
+                  >
+                    Register Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Past Events / Stitch & Stories -->
+      <section
+        class="py-stack-lg bg-surface transition-all duration-1000 opacity-100 translate-y-0"
+      >
+        <div class="max-w-container-max mx-auto px-margin">
+          <div class="text-center mb-16">
+            <h2 class="font-display-md text-display-md text-on-surface mb-4">
+              Stitch & Stories: Community Activities
+            </h2>
+            <div
+              class="w-24 h-1 bg-primary-container mx-auto rounded-full"
+            ></div>
+          </div>
+
+          <!-- Activities Grid Container -->
+          <div
+            id="activitiesContainer"
+            class="grid grid-cols-1 md:grid-cols-2 gap-6"
+          >
+            <!-- Initial 2 Activities Visible -->
+            <article
+              class="rounded-3xl bg-surface-container-lowest p-6 border border-outline-variant/50"
+            >
+              <div class="mb-4 overflow-hidden rounded-lg">
+                <img
+                  src="img/event1.jpg"
+                  alt="Knitting Circle Weekend"
+                  class="w-full h-44 object-cover"
+                />
+              </div>
+              <p
+                class="text-label-sm uppercase tracking-wider text-primary mb-2"
+              >
+                Our Events
+              </p>
+              <h3
+                class="font-headline-md text-headline-md text-on-surface mb-3"
+              >
+                Knitting Circle Weekend
+              </h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+                Workshop pola tas rajut bersama anggota komunitas. Banyak tips
+                praktis, sesi tanya jawab, dan inspirasi motif baru.
+              </p>
+              <span
+                class="inline-flex items-center gap-2 text-label-sm text-outline"
+              >
+                <span class="material-symbols-outlined text-[18px]"
+                  >calendar_month</span
+                >
+                14 Juni 2026
+              </span>
+            </article>
+
+            <article
+              class="rounded-3xl bg-surface-container-lowest p-6 border border-outline-variant/50"
+            >
+              <div class="mb-4 overflow-hidden rounded-lg">
+                <img
+                  src="img/event2.jpg"
+                  alt="Craft & Coffee Meetup"
+                  class="w-full h-44 object-cover"
+                />
+              </div>
+              <p
+                class="text-label-sm uppercase tracking-wider text-primary mb-2"
+              >
+                Our Events
+              </p>
+              <h3
+                class="font-headline-md text-headline-md text-on-surface mb-3"
+              >
+                Craft & Coffee Meetup
+              </h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+                Ngobrol santai sambil merajut. Peserta berbagi teknik join warna
+                dan finishing yang rapi.
+              </p>
+              <span
+                class="inline-flex items-center gap-2 text-label-sm text-outline"
+              >
+                <span class="material-symbols-outlined text-[18px]"
+                  >calendar_month</span
+                >
+                07 Juni 2026
+              </span>
+            </article>
+
+            <!-- Hidden Activities (6 more) -->
+            <article
+              class="rounded-3xl bg-surface-container-lowest p-6 border border-outline-variant/50 hidden-activity"
+            >
+              <div class="mb-4 overflow-hidden rounded-lg">
+                <img
+                  src="img/swap.jpg"
+                  alt="Summer Yarn Swap"
+                  class="w-full h-44 object-cover"
+                />
+              </div>
+              <p
+                class="text-label-sm uppercase tracking-wider text-primary mb-2"
+              >
+                Our Events
+              </p>
+              <h3
+                class="font-headline-md text-headline-md text-on-surface mb-3"
+              >
+                Summer Yarn Swap
+              </h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+                Tukarkan benang rajut favorit dengan sesama anggota komunitas.
+                Acara menyenangkan untuk mendapatkan koleksi warna baru dan
+                berjejaring dengan rajuter lain.
+              </p>
+              <span
+                class="inline-flex items-center gap-2 text-label-sm text-outline"
+              >
+                <span class="material-symbols-outlined text-[18px]"
+                  >calendar_month</span
+                >
+                25 Mei 2026
+              </span>
+            </article>
+
+            <article
+              class="rounded-3xl bg-surface-container-lowest p-6 border border-outline-variant/50 hidden-activity"
+            >
+              <div class="mb-4 overflow-hidden rounded-lg">
+                <img
+                  src="img/lace.jpg"
+                  alt="Advanced Lace Patterns"
+                  class="w-full h-44 object-cover"
+                />
+              </div>
+              <p
+                class="text-label-sm uppercase tracking-wider text-primary mb-2"
+              >
+                Our Events
+              </p>
+              <h3
+                class="font-headline-md text-headline-md text-on-surface mb-3"
+              >
+                Advanced Lace Patterns
+              </h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+                Workshop tingkat lanjut untuk menguasai teknik lacework dan
+                membuat pola rajut yang indah dan rumit. Cocok untuk yang sudah
+                mahir dasar.
+              </p>
+              <span
+                class="inline-flex items-center gap-2 text-label-sm text-outline"
+              >
+                <span class="material-symbols-outlined text-[18px]"
+                  >calendar_month</span
+                >
+                16 Mei 2026
+              </span>
+            </article>
+
+            <article
+              class="rounded-3xl bg-surface-container-lowest p-6 border border-outline-variant/50 hidden-activity"
+            >
+              <div class="mb-4 overflow-hidden rounded-lg">
+                <img
+                  src="img/amigurumi.jpg"
+                  alt="Beginner Amigurumi"
+                  class="w-full h-44 object-cover"
+                />
+              </div>
+              <p
+                class="text-label-sm uppercase tracking-wider text-primary mb-2"
+              >
+                Our Events
+              </p>
+              <h3
+                class="font-headline-md text-headline-md text-on-surface mb-3"
+              >
+                Beginner Amigurumi Workshop
+              </h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+                Belajar membuat boneka rajut lucu (amigurumi) dari awal. Peserta
+                akan pulang dengan karya sendiri yang dapat langsung digunakan
+                atau dijadikan hadiah.
+              </p>
+              <span
+                class="inline-flex items-center gap-2 text-label-sm text-outline"
+              >
+                <span class="material-symbols-outlined text-[18px]"
+                  >calendar_month</span
+                >
+                03 Mei 2026
+              </span>
+            </article>
+
+            <article
+              class="rounded-3xl bg-surface-container-lowest p-6 border border-outline-variant/50 hidden-activity"
+            >
+              <div class="mb-4 overflow-hidden rounded-lg">
+                <img
+                  src="img/mixing.jpg"
+                  alt="Color Mixing Workshop"
+                  class="w-full h-44 object-cover"
+                />
+              </div>
+              <p
+                class="text-label-sm uppercase tracking-wider text-primary mb-2"
+              >
+                Our Events
+              </p>
+              <h3
+                class="font-headline-md text-headline-md text-on-surface mb-3"
+              >
+                Color Mixing & Dye Workshop
+              </h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+                Pelajari seni mencampurkan warna dan mewarnai benang rajut
+                sendiri. Ciptakan palet warna unik yang sesuai dengan gaya dan
+                preferensi pribadi Anda.
+              </p>
+              <span
+                class="inline-flex items-center gap-2 text-label-sm text-outline"
+              >
+                <span class="material-symbols-outlined text-[18px]"
+                  >calendar_month</span
+                >
+                21 April 2026
+              </span>
+            </article>
+
+            <article
+              class="rounded-3xl bg-surface-container-lowest p-6 border border-outline-variant/50 hidden-activity"
+            >
+              <div class="mb-4 overflow-hidden rounded-lg">
+                <img
+                  src="img/wearable.jpg"
+                  alt="Fashion & Wearables"
+                  class="w-full h-44 object-cover"
+                />
+              </div>
+              <p
+                class="text-label-sm uppercase tracking-wider text-primary mb-2"
+              >
+                Our Events
+              </p>
+              <h3
+                class="font-headline-md text-headline-md text-on-surface mb-3"
+              >
+                Trendy Fashion & Wearables
+              </h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+                Ciptakan pakaian rajut modern yang fashionable dan nyaman. Dari
+                crop top hingga cardigan, pelajari cara membuat fashion
+                statement dengan tangan Anda sendiri.
+              </p>
+              <span
+                class="inline-flex items-center gap-2 text-label-sm text-outline"
+              >
+                <span class="material-symbols-outlined text-[18px]"
+                  >calendar_month</span
+                >
+                08 April 2026
+              </span>
+            </article>
+
+            <article
+              class="rounded-3xl bg-surface-container-lowest p-6 border border-outline-variant/50 hidden-activity"
+            >
+              <div class="mb-4 overflow-hidden rounded-lg">
+                <img
+                  src="img/sustainable.jpg"
+                  alt="Sustainable Crafting"
+                  class="w-full h-44 object-cover"
+                />
+              </div>
+              <p
+                class="text-label-sm uppercase tracking-wider text-primary mb-2"
+              >
+                Our Events
+              </p>
+              <h3
+                class="font-headline-md text-headline-md text-on-surface mb-3"
+              >
+                Sustainable Crafting Initiative
+              </h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+                Bergabunglah dengan gerakan ramah lingkungan dengan menggunakan
+                benang daur ulang dan bahan-bahan berkelanjutan. Ciptakan karya
+                indah sambil menjaga planet.
+              </p>
+              <span
+                class="inline-flex items-center gap-2 text-label-sm text-outline"
+              >
+                <span class="material-symbols-outlined text-[18px]"
+                  >calendar_month</span
+                >
+                19 Maret 2026
+              </span>
+            </article>
+          </div>
+
+          <!-- View More Button -->
+          <div class="flex justify-center mt-12">
+            <button
+              id="viewMoreBtn"
+              class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-lg hover:scale-105 transition-transform shadow-lg"
+            >
+              View More Activities
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Inspiration CTA -->
+      <section class="pt-20 mb-stack-lg">
+        <div
+          class="relative rounded-[32px] overflow-hidden min-h-[300px] flex items-center p-12"
+        >
+          <img
+            alt="Community"
+            class="absolute inset-0 w-full h-full object-cover"
+            src="img/project.png"
+          />
+          <div class="absolute inset-0 bg-primary/40 backdrop-blur-[2px]"></div>
+          <div class="relative z-10 text-white max-w-xl">
+            <h2 class="font-display-md text-display-md mb-4">
+              Start your own Project Circle
+            </h2>
+            <p class="font-body-lg mb-8 opacity-90">
+              Bentuk kelompok rajut sesuai jadwal dan minatmu, lalu nikmati
+              keseruan berkarya bersama.
+            </p>
+            <button
+              id="openCircleModal"
+              class="bg-white text-primary px-8 py-4 rounded-full font-label-lg hover:scale-110 transition-transform"
+            >
+              Create a Circle
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modal -->
+      <div
+        id="circleModal"
+        class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50"
+      >
+        <div
+          class="bg-white rounded-3xl p-8 w-full max-w-2xl mx-4 max-h-[90vh] overflow-y-auto"
+        >
+          <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold text-primary">
+              Create Your Project Circle
+            </h2>
+
+            <button id="closeCircleModal" class="text-2xl">&times;</button>
+          </div>
+
+          <form id="circleForm" class="space-y-4">
+            <!-- Nama Kelompok -->
+            <div>
+              <label class="block mb-1 font-medium">Nama Kelompok</label>
+              <input
+                type="text"
+                id="groupName"
+                class="w-full border rounded-xl p-3"
+                placeholder="Masukkan nama kelompok"
+              />
+              <small class="text-red-500 hidden"></small>
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label class="block mb-1 font-medium">Email</label>
+              <input
+                type="email"
+                id="email"
+                class="w-full border rounded-xl p-3"
+                placeholder="contoh@email.com"
+              />
+              <small class="text-red-500 hidden"></small>
+            </div>
+
+            <!-- Anggota -->
+            <div>
+              <label class="block mb-1 font-medium">Anggota 1</label>
+              <input
+                type="text"
+                id="member1"
+                class="w-full border rounded-xl p-3"
+              />
+              <small class="text-red-500 hidden"></small>
+            </div>
+
+            <div>
+              <label class="block mb-1 font-medium">Anggota 2</label>
+              <input
+                type="text"
+                id="member2"
+                class="w-full border rounded-xl p-3"
+              />
+              <small class="text-red-500 hidden"></small>
+            </div>
+
+            <div>
+              <label class="block mb-1 font-medium">Anggota 3</label>
+              <input
+                type="text"
+                id="member3"
+                class="w-full border rounded-xl p-3"
+              />
+              <small class="text-red-500 hidden"></small>
+            </div>
+
+            <div>
+              <label class="block mb-1 font-medium">Anggota 4</label>
+              <input
+                type="text"
+                id="member4"
+                class="w-full border rounded-xl p-3"
+              />
+              <small class="text-red-500 hidden"></small>
+            </div>
+
+            <div>
+              <label class="block mb-1 font-medium">Anggota 5</label>
+              <input
+                type="text"
+                id="member5"
+                class="w-full border rounded-xl p-3"
+              />
+              <small class="text-red-500 hidden"></small>
+            </div>
+
+            <!-- Hari -->
+            <div>
+              <label class="block mb-1 font-medium">Hari</label>
+              <select id="day" class="w-full border rounded-xl p-3">
+                <option value="">Pilih Hari</option>
+                <option>Senin</option>
+                <option>Selasa</option>
+                <option>Rabu</option>
+                <option>Kamis</option>
+                <option>Jumat</option>
+                <option>Sabtu</option>
+                <option>Minggu</option>
+              </select>
+              <small class="text-red-500 hidden"></small>
+            </div>
+
+            <!-- Tanggal -->
+            <div>
+              <label class="block mb-1 font-medium">Tanggal</label>
+              <input
+                type="date"
+                id="date"
+                class="w-full border rounded-xl p-3"
+              />
+              <small class="text-red-500 hidden"></small>
+            </div>
+
+            <!-- Jam -->
+            <div>
+              <label class="block mb-1 font-medium">Jam</label>
+              <input
+                type="time"
+                id="time"
+                class="w-full border rounded-xl p-3"
+              />
+              <small class="text-red-500 hidden"></small>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-primary text-white py-3 rounded-full hover:opacity-90"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      const modal = document.getElementById("circleModal");
+      const openBtn = document.getElementById("openCircleModal");
+      const closeBtn = document.getElementById("closeCircleModal");
+      const form = document.getElementById("circleForm");
+
+      openBtn.addEventListener("click", () => {
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        modal.classList.add("hidden");
+      });
+
+      window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.classList.add("hidden");
+        }
+      });
+
+      function showError(input, message) {
+        const error = input.parentElement.querySelector("small");
+
+        if (error) {
+          error.textContent = message;
+          error.classList.remove("hidden");
+        }
+
+        input.classList.add("border-red-500");
+      }
+
+      function clearError(input) {
+        const error = input.parentElement.querySelector("small");
+
+        if (error) {
+          error.classList.add("hidden");
+          error.textContent = "";
+        }
+
+        input.classList.remove("border-red-500");
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        let valid = true;
+
+        const groupName = document.getElementById("groupName");
+        const email = document.getElementById("email");
+        const day = document.getElementById("day");
+        const date = document.getElementById("date");
+        const time = document.getElementById("time");
+
+        const members = [
+          document.getElementById("member1"),
+          document.getElementById("member2"),
+          document.getElementById("member3"),
+          document.getElementById("member4"),
+          document.getElementById("member5"),
+        ];
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        const nameRegex = /^[A-Za-zÀ-ÿ\s]+$/;
+
+        form
+          .querySelectorAll("input, select")
+          .forEach((field) => clearError(field));
+        if (groupName.value.trim().length < 3) {
+          showError(groupName, "Nama kelompok minimal 3 karakter.");
+          valid = false;
+        }
+
+        if (!emailRegex.test(email.value.trim())) {
+          showError(email, "Masukkan alamat email yang valid.");
+          valid = false;
+        }
+
+        members.forEach((member) => {
+          if (!member.value.trim()) {
+            showError(member, "Nama anggota harus diisi.");
+            valid = false;
+          } else if (!nameRegex.test(member.value.trim())) {
+            showError(member, "Nama anggota hanya boleh berisi huruf.");
+            valid = false;
+          }
+        });
+
+        if (day.value === "") {
+          showError(day, "Silakan pilih hari pertemuan.");
+          valid = false;
+        }
+
+        if (date.value === "") {
+          showError(date, "Silakan pilih tanggal pertemuan.");
+          valid = false;
+        }
+
+        if (time.value === "") {
+          showError(time, "Silakan pilih jam pertemuan.");
+          valid = false;
+        }
+
+        if (valid) {
+          Swal.fire({
+            icon: "success",
+            title: "Kelompok Berhasil Dibuat!",
+            text: "Informasi pertemuan akan dikirim ke email yang terdaftar. Selamat berkarya bersama!",
+            confirmButtonColor: "#78555e",
+          });
+
+          form.reset();
+
+          modal.classList.add("hidden");
+        }
+      });
+
+      // View More Activities Toggle
+      const viewMoreBtn = document.getElementById("viewMoreBtn");
+      const hiddenActivities = document.querySelectorAll(".hidden-activity");
+      let isExpanded = false;
+
+      // Ensure hidden activities are hidden on page load
+      window.addEventListener("load", () => {
+        hiddenActivities.forEach((activity) => {
+          activity.classList.add("hidden");
+        });
+      });
+
+      viewMoreBtn.addEventListener("click", () => {
+        isExpanded = !isExpanded;
+
+        if (isExpanded) {
+          // Show all activities
+          hiddenActivities.forEach((activity) => {
+            activity.classList.remove("hidden");
+          });
+          viewMoreBtn.textContent = "View Less Activities";
+          viewMoreBtn.classList.add("bg-outline");
+        } else {
+          // Hide extra activities
+          hiddenActivities.forEach((activity) => {
+            activity.classList.add("hidden");
+          });
+          viewMoreBtn.textContent = "View More Activities";
+          viewMoreBtn.classList.remove("bg-outline");
+        }
+      });
+    </script>
+
+    <div id="register-modal-container"></div>
+
+    <script>
+      fetch("register-modal.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("register-modal-container").innerHTML = html;
+        });
+    </script>
+
+    <script src="register-modal.js"></script>
+
+    <div id="footer-placeholder"></div>
+    <script>
+      fetch("footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footer-placeholder").innerHTML = html;
+        });
+    </script>
+  </body>
+</html>

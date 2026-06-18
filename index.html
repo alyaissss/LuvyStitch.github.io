@@ -1,0 +1,839 @@
+<!doctype html>
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>LuvyStitch</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed-dim": "#e7bbc6",
+              outline: "#817476",
+              "surface-container-highest": "#e9e1dc",
+              "surface-bright": "#fff8f5",
+              "on-error-container": "#93000a",
+              "on-surface-variant": "#4f4446",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "on-secondary-fixed": "#221045",
+              "on-primary": "#ffffff",
+              "surface-container-low": "#fbf2ed",
+              "on-tertiary-fixed": "#1c1c1a",
+              "on-surface": "#1e1b18",
+              "on-secondary-fixed-variant": "#4e3d74",
+              primary: "#78555e",
+              "primary-container": "#ffd1dc",
+              "secondary-fixed": "#eaddff",
+              "on-primary-container": "#7a5761",
+              "surface-container-high": "#efe6e2",
+              "on-background": "#1e1b18",
+              "tertiary-fixed": "#e5e2df",
+              "on-tertiary-container": "#61615e",
+              error: "#ba1a1a",
+              "surface-container": "#f5ece7",
+              "outline-variant": "#d3c3c5",
+              "surface-variant": "#e9e1dc",
+              "on-primary-fixed-variant": "#5e3e47",
+              tertiary: "#5f5e5c",
+              "error-container": "#ffdad6",
+              "inverse-surface": "#34302c",
+              background: "#fff8f5",
+              "surface-tint": "#78555e",
+              "on-secondary": "#ffffff",
+              secondary: "#67558d",
+              "on-error": "#ffffff",
+              "secondary-container": "#d4bfff",
+              "secondary-fixed-dim": "#d1bcfc",
+              "inverse-primary": "#e7bbc6",
+              "tertiary-fixed-dim": "#c8c6c3",
+              surface: "#fff8f5",
+              "on-tertiary-fixed-variant": "#474745",
+              "tertiary-container": "#dfdcd9",
+              "surface-dim": "#e1d8d4",
+              "on-primary-fixed": "#2d141c",
+              "on-secondary-container": "#5c4b82",
+              "primary-fixed": "#ffd9e2",
+              "inverse-on-surface": "#f8efea",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              margin: "48px",
+              gutter: "24px",
+              "stack-sm": "12px",
+              "stack-lg": "48px",
+              "stack-md": "24px",
+              "container-max": "1280px",
+              base: "8px",
+            },
+            fontFamily: {
+              "headline-md": ["Playfair Display"],
+              "body-md": ["Montserrat"],
+              "headline-lg": ["Playfair Display"],
+              "body-lg": ["Montserrat"],
+              "display-lg": ["Playfair Display"],
+              "label-sm": ["Montserrat"],
+              "body-sm": ["Montserrat"],
+              "label-lg": ["Montserrat"],
+              "display-md": ["Playfair Display"],
+            },
+            fontSize: {
+              "headline-md": ["22px", { lineHeight: "1.3", fontWeight: "600" }],
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-lg": ["28px", { lineHeight: "1.3", fontWeight: "600" }],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "display-lg": [
+                "48px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-sm": [
+                "12px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "0.05em",
+                  fontWeight: "500",
+                },
+              ],
+              "body-sm": ["14px", { lineHeight: "1.5", fontWeight: "400" }],
+              "label-lg": [
+                "14px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "0.05em",
+                  fontWeight: "600",
+                },
+              ],
+              "display-md": ["36px", { lineHeight: "1.2", fontWeight: "700" }],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .scale-102 {
+        transform: scale(1.02);
+      }
+      /* Ensure main accounts for fixed navbar height */
+      :root {
+        --nav-height: 80px;
+      }
+      body {
+        padding-top: 0 !important;
+      }
+      main {
+        padding-top: 0 !important;
+      }
+      main > section:not(:first-child) {
+        padding-top: calc(var(--nav-height) + 1rem) !important;
+      }
+      main > section:first-child .max-w-2xl {
+        padding-top: calc(var(--nav-height) + 2rem);
+      }
+    </style>
+  </head>
+  <body class="bg-background text-on-surface font-body-md">
+    <!-- NAVBAR CONTAINER -->
+    <div id="navbar-container" class="fixed top-0 left-0 right-0 z-50"></div>
+    <script src="load-navbar.js"></script>
+
+    <main>
+      <!-- Hero Section -->
+      <section
+        class="relative h-[85vh] flex items-center overflow-hidden transition-all duration-1000 opacity-100 translate-y-0"
+      >
+        <div class="absolute inset-0 z-0">
+          <img
+            class="w-full h-full object-cover"
+            src="img/tes.jpg"
+            alt="Yarns"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-transparent"
+          ></div>
+        </div>
+        <div class="relative z-10 max-w-container-max mx-auto px-margin w-full">
+          <div class="max-w-2xl">
+            <h1
+              class="font-display-lg text-display-lg text-primary mb-6 leading-tight"
+            >
+              Craft Your Story, <br /><span class="italic font-normal"
+                >One Stitch</span
+              >
+              at a Time
+            </h1>
+            <p
+              class="font-body-lg text-body-lg text-on-surface-variant mb-10 leading-relaxed"
+            >
+              Belajar, berkarya, dan berbagi melalui dunia merajut. <br />
+              Temukan pola terbaik, tutorial lengkap, dan komunitas yang siap
+              mendukung kreativitasmu.
+            </p>
+            <div class="flex gap-4">
+              <button
+                class="bg-primary text-white px-10 py-4 rounded-xl font-label-lg text-label-lg font-bold hover:shadow-lg transition-all hover:scale-105 active:scale-95"
+                onclick="window.location.href = 'patterns.html'"
+              >
+                Browse Patterns
+              </button>
+              <button
+                class="bg-white border-2 border-primary text-primary px-10 py-4 rounded-xl font-label-lg text-label-lg font-bold hover:scale-105 active:scale-95"
+                onclick="
+                  window.location.href =
+                    'https://youtube.com/playlist?list=PLnURLXEd1iyxFQGWrcDd_bQtf7J4rcaGl&si=2yIe2BsYvp0hkDol'
+                "
+              >
+                View Tutorials
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About LuvyStitch -->
+      <section
+        class="relative bg-surface py-stack-lg transition-all duration-1000 opacity-100 translate-y-0"
+      >
+        <div
+          class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-primary/10 to-transparent pointer-events-none"
+        ></div>
+        <div class="max-w-container-max mx-auto px-margin">
+          <div class="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] items-center">
+            <div>
+              <p
+                class="font-label-lg text-label-lg text-secondary mb-3 uppercase tracking-[0.2em]"
+              >
+                Tentang Kami
+              </p>
+              <h2 class="font-display-md text-display-md text-on-surface mb-6">
+                LuvyStitch: Rumah Kreativitas dan Keterampilan Merajut
+              </h2>
+              <p
+                class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed"
+              >
+                LuvyStitch hadir untuk mendukung setiap perajut, dari pemula
+                hingga ahli. Kami menyajikan pola terbaru, tutorial
+                step-by-step, dan inspirasi kreatif yang dibuat khusus agar kamu
+                bisa membuat proyek merajut dengan percaya diri dan penuh gaya.
+              </p>
+              <div class="mt-10 grid gap-4 sm:grid-cols-2">
+                <div
+                  class="rounded-3xl bg-white p-6 shadow-sm border border-outline-variant"
+                >
+                  <p class="font-label-lg text-label-lg text-primary mb-2">
+                    Kreatif & Mudah
+                  </p>
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+                  >
+                    Konten kami dibuat untuk siapa saja yang ingin mulai merajut
+                    tanpa kebingungan.
+                  </p>
+                </div>
+                <div
+                  class="rounded-3xl bg-white p-6 shadow-sm border border-outline-variant"
+                >
+                  <p class="font-label-lg text-label-lg text-primary mb-2">
+                    Supportive Community
+                  </p>
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+                  >
+                    Dapatkan dukungan, motivasi, dan tips langsung dari
+                    komunitas yang hangat.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="relative overflow-hidden rounded-[2rem] shadow-xl border border-outline-variant bg-white"
+            >
+              <img
+                class="w-full h-96 object-cover"
+                src="img/community2.jpg"
+                alt="LuvyStitch Craft"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"
+              ></div>
+              <div
+                class="absolute left-6 bottom-6 right-6 rounded-3xl bg-white/90 p-6 backdrop-blur-sm border border-white/80"
+              >
+                <p
+                  class="font-label-lg text-label-lg text-secondary mb-2 uppercase tracking-[0.2em]"
+                >
+                  Yang Kami Tawarkan
+                </p>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+                >
+                  Ide proyek unik, tutorial yang mudah diikuti, dan pola yang
+                  selalu diperbarui untuk membantumu menciptakan hasil karya
+                  yang istimewa.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose LuvyStitch -->
+      <section
+        class="bg-surface-container-low py-stack-lg transition-all duration-1000 opacity-100 translate-y-0"
+      >
+        <div class="max-w-container-max mx-auto px-margin">
+          <div class="max-w-2xl mx-auto text-center mb-12">
+            <p
+              class="font-label-lg text-label-lg text-secondary mb-3 uppercase tracking-[0.2em]"
+            >
+              Keunggulan Kami
+            </p>
+            <h3 class="font-display-md text-display-md text-on-surface mb-4">
+              Mengapa Memilih LuvyStitch?
+            </h3>
+            <p
+              class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+            >
+              Temukan keunggulan kami yang membuat proses belajar merajut jadi
+              lebih mudah, menyenangkan, dan memuaskan.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <div
+              class="rounded-3xl bg-white p-8 shadow-sm border border-outline-variant hover:-translate-y-1 transition-transform"
+            >
+              <div
+                class="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/15 text-secondary"
+              >
+                <span class="material-symbols-outlined text-3xl"
+                  >check_circle</span
+                >
+              </div>
+              <h4
+                class="font-headline-md text-headline-md text-on-surface mb-4"
+              >
+                Panduan Praktis
+              </h4>
+              <p
+                class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+              >
+                Setiap pola dan tutorial kami dibuat jelas, terstruktur, dan
+                ramah pemula, sehingga kamu dapat segera mulai berkarya.
+              </p>
+            </div>
+            <div
+              class="rounded-3xl bg-white p-8 shadow-sm border border-outline-variant hover:-translate-y-1 transition-transform"
+            >
+              <div
+                class="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/15 text-secondary"
+              >
+                <span class="material-symbols-outlined text-3xl">groups</span>
+              </div>
+              <h4
+                class="font-headline-md text-headline-md text-on-surface mb-4"
+              >
+                Komunitas Hangat
+              </h4>
+              <p
+                class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+              >
+                Bergabung dengan komunitas yang saling mendukung, berbagi tips,
+                dan merayakan hasil kreatif bersama.
+              </p>
+            </div>
+            <div
+              class="rounded-3xl bg-white p-8 shadow-sm border border-outline-variant hover:-translate-y-1 transition-transform"
+            >
+              <div
+                class="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/15 text-secondary"
+              >
+                <span class="material-symbols-outlined text-3xl">star</span>
+              </div>
+              <h4
+                class="font-headline-md text-headline-md text-on-surface mb-4"
+              >
+                Koleksi Eksklusif
+              </h4>
+              <p
+                class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+              >
+                Akses pola, tutorial, dan ide proyek eksklusif yang terus
+                diperbarui untuk membuat karyamu semakin istimewa.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Master the Craft (Tutorials) -->
+      <section
+        class="bg-surface-container-low py-stack-lg transition-all duration-1000 opacity-100 translate-y-0"
+      >
+        <div class="max-w-container-max mx-auto px-margin">
+          <div
+            class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6"
+          >
+            <div class="max-w-xl">
+              <h2 class="font-display-md text-display-md text-on-surface mb-4">
+                Master the Craft
+              </h2>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Tingkatkan kemampuan merajutmu melalui video tutorial
+                berkualitas dan pola interaktif yang mudah diikuti.
+              </p>
+            </div>
+            <a
+              class="text-primary font-label-lg text-label-lg flex items-center gap-2 group"
+              href="patterns.html"
+              >Explore All Tutorials
+              <span
+                class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
+                >arrow_forward</span
+              ></a
+            >
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <div class="group cursor-pointer">
+              <div
+                class="relative overflow-hidden rounded-2xl aspect-[4/5] mb-4"
+              >
+                <img
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  src="img/pita.jpg"
+                  alt="Purl Tutorial"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-on-surface/60 to-transparent"
+                ></div>
+                <div class="absolute bottom-6 left-6 text-surface">
+                  <span
+                    class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-label-sm font-label-sm mb-2 inline-block"
+                    >Beginner</span
+                  >
+                  <h3 class="font-headline-md text-headline-md">
+                    Foundations of Purl
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="group cursor-pointer">
+              <div
+                class="relative overflow-hidden rounded-2xl aspect-[4/5] mb-4"
+              >
+                <img
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  src="img/syal2.jpg"
+                  alt="Oversized Sweater"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-on-surface/60 to-transparent"
+                ></div>
+                <div class="absolute bottom-6 left-6 text-surface">
+                  <span
+                    class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-label-sm font-label-sm mb-2 inline-block"
+                    >Intermediate</span
+                  >
+                  <h3 class="font-headline-md text-headline-md">
+                    The Oversized Edit
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="group cursor-pointer">
+              <div
+                class="relative overflow-hidden rounded-2xl aspect-[4/5] mb-4"
+              >
+                <img
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  src="img/dress.jpg"
+                  alt="Lace Work"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-on-surface/60 to-transparent"
+                ></div>
+                <div class="absolute bottom-6 left-6 text-surface">
+                  <span
+                    class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-label-sm font-label-sm mb-2 inline-block"
+                    >Advanced</span
+                  >
+                  <h3 class="font-headline-md text-headline-md">
+                    Intricate Lace-work
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Join the Stitch Circle (Community) -->
+      <section
+        class="py-stack-lg transition-all duration-1000 opacity-100 translate-y-0"
+      >
+        <div class="max-w-container-max mx-auto px-margin">
+          <div
+            class="bg-surface-container rounded-[2rem] p-stack-md md:p-16 flex flex-col lg:flex-row gap-16 items-center"
+          >
+            <div class="lg:w-1/2">
+              <h2 class="font-display-md text-display-md text-on-surface mb-6">
+                Join the Stitch Circle
+              </h2>
+              <div class="space-y-8">
+                <div class="flex gap-6">
+                  <div
+                    class="w-14 h-14 rounded-full bg-primary-container flex items-center justify-center shrink-0"
+                  >
+                    <span class="material-symbols-outlined text-primary"
+                      >groups</span
+                    >
+                  </div>
+                  <div>
+                    <h4
+                      class="font-headline-md text-headline-md text-on-surface mb-2"
+                    >
+                      Local Guilds
+                    </h4>
+                    <p
+                      class="font-body-md text-body-md text-on-surface-variant"
+                    >
+                      Terhubung dengan sesama pecinta rajut, berbagi pengalaman,
+                      dan berkembang bersama dalam komunitas yang suportif.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex gap-6">
+                  <div
+                    class="w-14 h-14 rounded-full bg-primary-container flex items-center justify-center shrink-0"
+                  >
+                    <span class="material-symbols-outlined text-primary"
+                      >forum</span
+                    >
+                  </div>
+                  <div>
+                    <h4
+                      class="font-headline-md text-headline-md text-on-surface mb-2"
+                    >
+                      Expert Feedback
+                    </h4>
+                    <p
+                      class="font-body-md text-body-md text-on-surface-variant"
+                    >
+                      Dapatkan saran, tips, dan umpan balik dari para perajin
+                      berpengalaman untuk meningkatkan hasil karyamu.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex gap-6">
+                  <div
+                    class="w-14 h-14 rounded-full bg-primary-container flex items-center justify-center shrink-0"
+                  >
+                    <span class="material-symbols-outlined text-primary"
+                      >inventory_2</span
+                    >
+                  </div>
+                  <div>
+                    <h4
+                      class="font-headline-md text-headline-md text-on-surface mb-2"
+                    >
+                      Pattern Library
+                    </h4>
+                    <p
+                      class="font-body-md text-body-md text-on-surface-variant"
+                    >
+                      Akses berbagai pola rajut pilihan yang terus diperbarui
+                      secara berkala untuk memberikan inspirasi baru pada setiap
+                      proyekmu.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="lg:w-1/2 grid grid-cols-2 gap-4">
+              <div class="pt-12">
+                <img
+                  alt="Knitting group"
+                  class="rounded-2xl shadow-lg w-full h-64 object-cover mb-4"
+                  src="img/bunga.jpg"
+                />
+                <img
+                  alt="Hands knitting"
+                  class="rounded-2xl shadow-lg w-full h-48 object-cover"
+                  src="img/boneka.jpg"
+                />
+              </div>
+              <div>
+                <img
+                  alt="Yarn storage"
+                  class="rounded-2xl shadow-lg w-full h-48 object-cover mb-4"
+                  src="img/cardigan.jpg"
+                />
+                <img
+                  alt="Knitting detail"
+                  class="rounded-2xl shadow-lg w-full h-64 object-cover"
+                  src="img/tas.jpg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Upcoming Workshops -->
+      <section
+        class="py-stack-lg bg-surface transition-all duration-1000 opacity-100 translate-y-0"
+      >
+        <div class="max-w-container-max mx-auto px-margin">
+          <div class="text-center mb-16">
+            <h2 class="font-display-md text-display-md text-on-surface mb-4">
+              Upcoming Workshops
+            </h2>
+            <div
+              class="w-24 h-1 bg-primary-container mx-auto rounded-full"
+            ></div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+            <div
+              class="bg-surface-container-low rounded-[2rem] overflow-hidden flex flex-col md:flex-row hover:shadow-xl transition-shadow duration-300 border border-outline-variant/30"
+            >
+              <div class="md:w-2/5 relative">
+                <img
+                  alt="Cable Knitting"
+                  class="h-full w-full object-cover"
+                  src="img/workshop1.jpg"
+                />
+                <div
+                  class="absolute top-4 left-4 bg-primary-container text-on-primary-container px-4 py-1 rounded-full text-label-sm font-label-sm"
+                >
+                  17 Juli 2026
+                </div>
+              </div>
+              <div class="md:w-3/5 p-8 flex flex-col justify-center">
+                <h3
+                  class="font-headline-lg text-headline-lg text-on-surface mb-3"
+                >
+                  Cozy Crochet for Beginners
+                </h3>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant mb-6"
+                >
+                  Belajar dasar-dasar merajut untuk pemula, mulai dari mengenal
+                  alat dan bahan hingga membuat proyek sederhana yang cantik dan
+                  fungsional.
+                </p>
+                <div class="flex items-center justify-between mt-auto">
+                  <span class="font-headline-md text-headline-md text-primary"
+                    >Free</span
+                  >
+                  <button
+                    class="bg-primary-container text-on-primary-container px-6 py-3 rounded-xl font-label-lg text-label-lg hover:scale-102 transition-transform active:scale-95"
+                    onclick="
+                      openRegisterModal({
+                        name: 'Cozy Crochet for Beginners',
+                        date: '17 Juli 2026',
+                        time: '10.00 WIB',
+                        isPaid: false,
+                      })
+                    "
+                  >
+                    Register Now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-surface-container-low rounded-[2rem] overflow-hidden flex flex-col md:flex-row hover:shadow-xl transition-shadow duration-300 border border-outline-variant/30"
+            >
+              <div class="md:w-2/5 relative">
+                <img
+                  alt="Home Textiles"
+                  class="h-full w-full object-cover"
+                  src="img/workshop2.jpg"
+                />
+                <div
+                  class="absolute top-4 left-4 bg-primary-container text-on-primary-container px-4 py-1 rounded-full text-label-sm font-label-sm"
+                >
+                  05 Agustus 2026
+                </div>
+              </div>
+              <div class="md:w-3/5 p-8 flex flex-col justify-center">
+                <h3
+                  class="font-headline-lg text-headline-lg text-on-surface mb-3"
+                >
+                  Handmade Hair Clip Class
+                </h3>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant mb-6"
+                >
+                  Kreasikan jepit rambut rajut dengan berbagai pilihan warna dan
+                  motif. Peserta akan belajar membuat aksesori rambut handmade
+                  yang cantik dan unik.
+                </p>
+                <div class="flex items-center justify-between mt-auto">
+                  <span class="font-headline-md text-headline-md text-primary"
+                    >25k</span
+                  >
+                  <button
+                    class="bg-primary-container text-on-primary-container px-6 py-3 rounded-xl font-label-lg text-label-lg hover:scale-102 transition-transform active:scale-95"
+                    onclick="
+                      openRegisterModal({
+                        name: 'Handmade Hair Clip Class',
+                        date: '05 Agustus 2026',
+                        time: '13.00 WIB',
+                        isPaid: true,
+                      })
+                    "
+                  >
+                    Register Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Newsletter / CTA -->
+      <section
+        class="py-stack-lg transition-all duration-1000 opacity-100 translate-y-0"
+      >
+        <div class="max-w-container-max mx-auto px-margin">
+          <div
+            class="bg-primary text-on-primary rounded-[2rem] p-12 text-center relative overflow-hidden"
+          >
+            <div
+              class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32"
+            ></div>
+            <div
+              class="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full -ml-24 -mb-24"
+            ></div>
+            <h2 class="font-display-md text-display-md mb-4 relative z-10">
+              Stay in the Loop
+            </h2>
+            <p
+              class="font-body-lg text-body-lg mb-8 max-w-2xl mx-auto opacity-90 relative z-10"
+            >
+              Daftarkan emailmu untuk menerima newsletter Stitch & Style berisi
+              inspirasi, pola eksklusif, dan tips merajut setiap minggu.
+            </p>
+            <form
+              id="newsletter-form"
+              class="flex flex-col md:flex-row gap-4 max-w-md mx-auto relative z-10"
+            >
+              <input
+                id="newsletter-email"
+                class="flex-grow px-6 py-4 rounded-xl bg-white text-on-surface border-none focus:ring-2 focus:ring-primary-fixed-dim"
+                placeholder="Enter your email"
+                type="email"
+                required
+              />
+              <button
+                class="bg-surface-bright text-primary px-8 py-4 rounded-xl font-label-lg text-label-lg hover:scale-102 transition-transform active:scale-95"
+                type="submit"
+              >
+                Subscribe
+              </button>
+            </form>
+            <p
+              id="newsletter-message"
+              class="mt-4 text-body-sm font-body-sm"
+              aria-live="polite"
+            ></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("newsletter-form");
+        const emailInput = document.getElementById("newsletter-email");
+        const message = document.getElementById("newsletter-message");
+
+        function setMessage(text, isError) {
+          if (!message) return;
+          message.textContent = text;
+          message.classList.toggle("text-on-primary", isError);
+          message.classList.toggle("text-on-primary", !isError); // ← Ganti ke class yang ada
+        }
+
+        function isValidEmail(email) {
+          return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        if (form && emailInput) {
+          form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const email = emailInput.value.trim();
+
+            if (!isValidEmail(email)) {
+              setMessage(
+                "Alamat email tidak valid! Pastikan email yang Anda masukkan sudah benar.",
+                true,
+              );
+              return;
+            }
+
+            setMessage(
+              "Berhasil berlangganan! Newsletter Stitch & Style akan dikirim ke email Anda setiap minggu.",
+              false,
+            );
+            form.reset();
+          });
+
+          emailInput.addEventListener("input", function () {
+            if (message) {
+              message.textContent = "";
+            }
+          });
+        }
+      });
+    </script>
+
+    <div id="register-modal-container"></div>
+
+    <script>
+      fetch("register-modal.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("register-modal-container").innerHTML = html;
+        });
+    </script>
+
+    <script src="register-modal.js"></script>
+
+    <div id="footer-placeholder"></div>
+    <script>
+      fetch("footer.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footer-placeholder").innerHTML = html;
+        });
+    </script>
+  </body>
+</html>
