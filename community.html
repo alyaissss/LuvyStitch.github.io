@@ -29,11 +29,11 @@
               "on-tertiary": "#ffffff",
               "on-secondary-fixed": "#221045",
               "on-primary": "#ffffff",
-              "surface-container-low": "#fbf5ff",
+              "surface-container-low": "#fbf2ed",
               "on-tertiary-fixed": "#1c1c1a",
               "on-surface": "#1e1b18",
               "on-secondary-fixed-variant": "#4e3d74",
-              primary: "#663046",
+              primary: "#78555e",
               "primary-container": "#ffd1dc",
               "secondary-fixed": "#eaddff",
               "on-primary-container": "#7a5761",
@@ -42,7 +42,7 @@
               "tertiary-fixed": "#e5e2df",
               "on-tertiary-container": "#61615e",
               error: "#ba1a1a",
-              "surface-container": "#f9f0ff",
+              "surface-container": "#f5ece7",
               "outline-variant": "#d3c3c5",
               "surface-variant": "#e9e1dc",
               "on-primary-fixed-variant": "#5e3e47",
@@ -58,7 +58,7 @@
               "secondary-fixed-dim": "#d1bcfc",
               "inverse-primary": "#e7bbc6",
               "tertiary-fixed-dim": "#c8c6c3",
-              surface: "#fef8ff",
+              surface: "#fff8f5",
               "on-tertiary-fixed-variant": "#474745",
               "tertiary-container": "#dfdcd9",
               "surface-dim": "#e1d8d4",
@@ -248,15 +248,36 @@
 
       <!-- Vision & Mission -->
       <section
-        class="bg-secondary-container/30 py-stack-lg mb-stack-lg w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]"
+        class="relative overflow-hidden py-24 w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-gradient-to-b from-secondary-container/20 via-white to-secondary-container/20"
       >
-        <div class="max-w-container-max mx-auto px-margin">
+        <!-- Decorative Blur -->
+        <div
+          class="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-secondary/10 blur-3xl pointer-events-none"
+        ></div>
+        <div
+          class="absolute -bottom-24 -right-24 w-80 h-80 rounded-full bg-primary/10 blur-3xl pointer-events-none"
+        ></div>
+
+        <div class="relative max-w-container-max mx-auto px-margin">
           <!-- Section Header -->
-          <div class="text-center mb-10">
+          <div class="text-center mb-16">
+            <span
+              class="inline-flex items-center px-4 py-1.5 rounded-full bg-secondary-container text-secondary text-sm font-medium mb-4"
+            >
+              About Us
+            </span>
+
             <h2 class="font-display-md text-display-md text-on-surface">
               Vision & Mission
             </h2>
-            <p class="font-body-md text-on-surface-variant mt-2">
+
+            <div class="flex justify-center mt-4 mb-5">
+              <div class="w-20 h-1 rounded-full bg-secondary"></div>
+            </div>
+
+            <p
+              class="font-body-md text-on-surface-variant max-w-2xl mx-auto leading-relaxed"
+            >
               Bersama membangun komunitas rajut yang kreatif, kolaboratif, dan
               inspiratif untuk menghasilkan karya yang bernilai.
             </p>
@@ -264,56 +285,75 @@
 
           <!-- Vision Card -->
           <div
-            class="bg-white rounded-[24px] p-8 card-shadow border border-outline-variant/30 mb-10 text-center"
+            class="group bg-white rounded-2xl border border-outline-variant/50 card-shadow p-8 mb-12 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-secondary/40"
           >
-            <div
-              class="w-16 h-16 mx-auto mb-5 bg-secondary-container/50 rounded-2xl flex items-center justify-center"
-            >
-              <span class="material-symbols-outlined text-secondary text-4xl">
-                auto_awesome
-              </span>
-            </div>
+            <div class="flex items-start gap-5">
+              <!-- Icon -->
+              <div
+                class="w-12 h-12 rounded-xl bg-secondary-container/50 flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-105"
+              >
+                <span class="material-symbols-outlined text-secondary">
+                  auto_awesome
+                </span>
+              </div>
 
-            <h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">
-              Our Vision
+              <!-- Content -->
+              <div class="flex-1">
+                <!-- Label -->
+                <div class="mb-4">
+                  <p
+                    class="font-headline-lg text-headline-lg text-on-surface tracking-wider mb-2"
+                  >
+                    Our Vision
+                  </p>
+
+                  <div
+                    class="w-10 h-1 rounded-full bg-secondary transition-all duration-300 group-hover:w-14"
+                  ></div>
+                </div>
+
+                <!-- Description -->
+                <p class="font-body-md text-on-surface-variant leading-relaxed">
+                  Menjadi komunitas merajut yang inovatif dan inklusif, tempat
+                  setiap individu dapat mengembangkan kreativitas, berbagi
+                  pengetahuan, serta menghasilkan karya handmade yang bernilai
+                  dan menginspirasi masyarakat luas.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mission Header -->
+          <div class="text-center mb-10">
+            <h3 class="font-headline-lg text-headline-lg text-on-surface mb-3">
+              Our Mission
             </h3>
 
-            <p
-              class="font-body-md text-on-surface-variant max-w-3xl mx-auto leading-relaxed"
-            >
-              Menjadi komunitas merajut yang inovatif dan inklusif, tempat
-              setiap individu dapat mengembangkan kreativitas, berbagi
-              pengetahuan, serta menghasilkan karya handmade yang bernilai dan
-              menginspirasi masyarakat luas.
+            <p class="text-on-surface-variant">
+              Lima komitmen utama dalam membangun komunitas rajut yang
+              berkembang dan berdampak.
             </p>
           </div>
 
-          <!-- Mission Title -->
-          <div class="text-center mb-8">
-            <h3 class="font-headline-lg text-headline-lg text-on-surface">
-              Our Mission
-            </h3>
-          </div>
-
-          <!-- Mission Cards -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Mission Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-7">
             <!-- Mission 1 -->
             <div
-              class="bg-white p-6 rounded-2xl border border-outline-variant/30 hover:border-primary/40 transition-all card-shadow"
+              class="group bg-white rounded-3xl p-6 border border-outline-variant/20 shadow-sm hover:-translate-y-2 hover:shadow-xl hover:border-secondary/40 transition-all duration-300"
             >
               <div
-                class="w-12 h-12 bg-secondary-container/50 rounded-xl flex items-center justify-center mb-4"
+                class="w-14 h-14 rounded-2xl bg-secondary-container/60 flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"
               >
                 <span class="material-symbols-outlined text-secondary">
                   school
                 </span>
               </div>
 
-              <h4 class="font-headline-md text-on-surface mb-2">
+              <h4 class="font-headline-md text-on-surface mb-3">
                 Learning Together
               </h4>
 
-              <p class="font-body-sm text-on-surface-variant">
+              <p class="font-body-sm text-on-surface-variant leading-7">
                 Menyediakan ruang belajar dan berbagi teknik merajut untuk semua
                 kalangan agar setiap anggota dapat terus berkembang.
               </p>
@@ -321,21 +361,21 @@
 
             <!-- Mission 2 -->
             <div
-              class="bg-white p-6 rounded-2xl border border-outline-variant/30 hover:border-primary/40 transition-all card-shadow"
+              class="group bg-white rounded-3xl p-6 border border-outline-variant/20 shadow-sm hover:-translate-y-2 hover:shadow-xl hover:border-secondary/40 transition-all duration-300"
             >
               <div
-                class="w-12 h-12 bg-secondary-container/50 rounded-xl flex items-center justify-center mb-4"
+                class="w-14 h-14 rounded-2xl bg-secondary-container/60 flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"
               >
                 <span class="material-symbols-outlined text-secondary">
                   event
                 </span>
               </div>
 
-              <h4 class="font-headline-md text-on-surface mb-2">
+              <h4 class="font-headline-md text-on-surface mb-3">
                 Creative Workshops
               </h4>
 
-              <p class="font-body-sm text-on-surface-variant">
+              <p class="font-body-sm text-on-surface-variant leading-7">
                 Mengadakan workshop, diskusi, dan berbagai kegiatan komunitas
                 secara rutin untuk meningkatkan keterampilan anggota.
               </p>
@@ -343,46 +383,43 @@
 
             <!-- Mission 3 -->
             <div
-              class="bg-white p-6 rounded-2xl border border-outline-variant/30 hover:border-primary/40 transition-all card-shadow"
+              class="group bg-white rounded-3xl p-6 border border-outline-variant/20 shadow-sm hover:-translate-y-2 hover:shadow-xl hover:border-secondary/40 transition-all duration-300"
             >
               <div
-                class="w-12 h-12 bg-secondary-container/50 rounded-xl flex items-center justify-center mb-4"
+                class="w-14 h-14 rounded-2xl bg-secondary-container/60 flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"
               >
                 <span class="material-symbols-outlined text-secondary">
                   groups
                 </span>
               </div>
 
-              <h4 class="font-headline-md text-on-surface mb-2">
+              <h4 class="font-headline-md text-on-surface mb-3">
                 Collaboration
               </h4>
 
-              <p class="font-body-sm text-on-surface-variant">
-                Mendorong kolaborasi antaranggota untuk menghasilkan karya rajut
-                yang kreatif, inovatif, dan berkualitas tinggi.
+              <p class="font-body-sm text-on-surface-variant leading-7">
+                Mendorong kolaborasi antar anggota untuk menghasilkan karya
+                rajut yang kreatif, inovatif, dan berkualitas tinggi.
               </p>
             </div>
-          </div>
 
-          <!-- Last 2 Mission Cards (Centered) -->
-          <div class="flex flex-wrap justify-center gap-6 mt-6">
             <!-- Mission 4 -->
             <div
-              class="bg-white p-6 rounded-2xl border border-outline-variant/30 hover:border-primary/40 transition-all card-shadow w-full md:w-[calc(50%-12px)] lg:w-[31.5%]"
+              class="group bg-white rounded-3xl p-6 border border-outline-variant/20 shadow-sm hover:-translate-y-2 hover:shadow-xl hover:border-secondary/40 transition-all duration-300"
             >
               <div
-                class="w-12 h-12 bg-secondary-container/50 rounded-xl flex items-center justify-center mb-4"
+                class="w-14 h-14 rounded-2xl bg-secondary-container/60 flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"
               >
                 <span class="material-symbols-outlined text-secondary">
                   favorite
                 </span>
               </div>
 
-              <h4 class="font-headline-md text-on-surface mb-2">
+              <h4 class="font-headline-md text-on-surface mb-3">
                 Supportive Community
               </h4>
 
-              <p class="font-body-sm text-on-surface-variant">
+              <p class="font-body-sm text-on-surface-variant leading-7">
                 Membangun lingkungan yang ramah, suportif, dan inklusif bagi
                 pemula maupun perajut berpengalaman.
               </p>
@@ -390,21 +427,21 @@
 
             <!-- Mission 5 -->
             <div
-              class="bg-white p-6 rounded-2xl border border-outline-variant/30 hover:border-primary/40 transition-all card-shadow w-full md:w-[calc(50%-12px)] lg:w-[31.5%]"
+              class="group bg-white rounded-3xl p-6 border border-outline-variant/20 shadow-sm hover:-translate-y-2 hover:shadow-xl hover:border-secondary/40 transition-all duration-300"
             >
               <div
-                class="w-12 h-12 bg-secondary-container/50 rounded-xl flex items-center justify-center mb-4"
+                class="w-14 h-14 rounded-2xl bg-secondary-container/60 flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"
               >
                 <span class="material-symbols-outlined text-secondary">
                   storefront
                 </span>
               </div>
 
-              <h4 class="font-headline-md text-on-surface mb-2">
+              <h4 class="font-headline-md text-on-surface mb-3">
                 Empowering Handmade
               </h4>
 
-              <p class="font-body-sm text-on-surface-variant">
+              <p class="font-body-sm text-on-surface-variant leading-7">
                 Memperkenalkan dan mendukung produk handmade lokal agar memiliki
                 nilai ekonomi serta dampak sosial yang lebih luas.
               </p>
@@ -417,6 +454,7 @@
       <section class="mb-stack-lg">
         <div class="flex justify-between items-end mb-stack-md">
           <div>
+            <br /><br /><br />
             <h2 class="font-display-md text-display-md text-on-surface">
               Community Forums
             </h2>
