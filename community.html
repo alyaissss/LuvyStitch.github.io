@@ -20,36 +20,36 @@
           extend: {
             colors: {
               "primary-fixed-dim": "#e7bbc6",
-              outline: "#817476",
-              "surface-container-highest": "#e9e1dc",
-              "surface-bright": "#fff8f5",
+              outline: "#8a7c92",
+              "surface-container-highest": "#e9dff0",
+              "surface-bright": "#fefcff",
               "on-error-container": "#93000a",
-              "on-surface-variant": "#4f4446",
+              "on-surface-variant": "#5a4d60",
               "surface-container-lowest": "#ffffff",
               "on-tertiary": "#ffffff",
               "on-secondary-fixed": "#221045",
               "on-primary": "#ffffff",
-              "surface-container-low": "#fbf2ed",
-              "on-tertiary-fixed": "#1c1c1a",
-              "on-surface": "#1e1b18",
+              "surface-container-low": "#faf4fc",
+              "on-tertiary-fixed": "#1f1b22",
+              "on-surface": "#1e1b20",
               "on-secondary-fixed-variant": "#4e3d74",
-              primary: "#78555e",
+              primary: "#702963",
               "primary-container": "#ffd1dc",
               "secondary-fixed": "#eaddff",
               "on-primary-container": "#7a5761",
-              "surface-container-high": "#efe6e2",
-              "on-background": "#1e1b18",
-              "tertiary-fixed": "#e5e2df",
-              "on-tertiary-container": "#61615e",
+              "surface-container-high": "#f0e8f5",
+              "on-background": "#1e1b20",
+              "tertiary-fixed": "#f2e8fa",
+              "on-tertiary-container": "#5d5266",
               error: "#ba1a1a",
-              "surface-container": "#f5ece7",
-              "outline-variant": "#d3c3c5",
-              "surface-variant": "#e9e1dc",
+              "surface-container": "#f5eef9",
+              "outline-variant": "#d7cadf",
+              "surface-variant": "#eee4f2",
               "on-primary-fixed-variant": "#5e3e47",
-              tertiary: "#5f5e5c",
+              tertiary: "#7b6488",
               "error-container": "#ffdad6",
-              "inverse-surface": "#34302c",
-              background: "#fff8f5",
+              "inverse-surface": "#312d36",
+              background: "#fcf7ff",
               "surface-tint": "#78555e",
               "on-secondary": "#ffffff",
               secondary: "#67558d",
@@ -57,15 +57,15 @@
               "secondary-container": "#d4bfff",
               "secondary-fixed-dim": "#d1bcfc",
               "inverse-primary": "#e7bbc6",
-              "tertiary-fixed-dim": "#c8c6c3",
-              surface: "#fff8f5",
-              "on-tertiary-fixed-variant": "#474745",
-              "tertiary-container": "#dfdcd9",
-              "surface-dim": "#e1d8d4",
+              "tertiary-fixed-dim": "#d7c4e6",
+              surface: "#fcf7ff",
+              "on-tertiary-fixed-variant": "#4d4653",
+              "tertiary-container": "#eadcf4",
+              "surface-dim": "#ece5f2",
               "on-primary-fixed": "#2d141c",
               "on-secondary-container": "#5c4b82",
               "primary-fixed": "#ffd9e2",
-              "inverse-on-surface": "#f8efea",
+              "inverse-on-surface": "#f7f0fa",
             },
             borderRadius: {
               DEFAULT: "0.25rem",
@@ -178,12 +178,12 @@
             <div class="flex gap-4">
               <button
                 id="hero-join"
-                class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-lg hover:scale-110 transition-transform shadow-lg"
+                class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-lg hover:scale-105 transition-transform shadow-lg"
               >
                 Join
               </button>
               <button
-                class="border-2 border-primary text-primary px-8 py-3 rounded-full font-label-lg hover:scale-110 hover:bg-primary/5 transition-transform"
+                class="border-2 border-primary text-primary px-8 py-3 rounded-full font-label-lg hover:scale-105 hover:bg-primary/5 transition-transform"
                 onclick="
                   document
                     .getElementById('events')
@@ -194,10 +194,12 @@
               </button>
             </div>
           </div>
-          <div class="flex-1 relative h-[400px] w-full hidden md:block">
+          <div
+            class="flex-1 relative h-[400px] w-full hidden md:block hover:scale-105 transition-transform duration-700"
+          >
             <img
               alt="Knitting Materials"
-              class="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-xl"
+              class="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-xl hover:scale-102 transition-transform duration-500"
               src="img/komunitas.png"
             />
           </div>
@@ -212,7 +214,7 @@
           <div class="aspect-square rounded-2xl overflow-hidden">
             <img
               alt="Featured Member"
-              class="w-full h-full object-cover"
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               src="img/saya.png"
             />
             <div class="absolute bottom-4 left-12">
@@ -262,7 +264,7 @@
           <!-- Section Header -->
           <div class="text-center mb-16">
             <span
-              class="inline-flex items-center px-4 py-1.5 rounded-full bg-secondary-container text-secondary text-sm font-medium mb-4"
+              class="inline-flex items-center px-4 py-1.5 rounded-full bg-secondary-container text-secondary text-sm font-medium mb-4 hover:scale-110 transition-transform shadow-lg"
             >
               About Us
             </span>
@@ -586,7 +588,7 @@
                     >Free</span
                   >
                   <button
-                    class="bg-primary-container text-on-primary-container px-6 py-3 rounded-xl font-label-lg text-label-lg hover:scale-102 transition-transform active:scale-95"
+                    class="bg-primary-container text-on-primary-container px-6 py-3 rounded-xl font-label-lg text-label-lg hover:scale-110 transition-transform active:scale-95"
                     onclick="
                       openRegisterModal({
                         name: 'Cozy Crochet for Beginners',
@@ -634,7 +636,7 @@
                     >25k</span
                   >
                   <button
-                    class="bg-primary-container text-on-primary-container px-6 py-3 rounded-xl font-label-lg text-label-lg hover:scale-102 transition-transform active:scale-95"
+                    class="bg-primary-container text-on-primary-container px-6 py-3 rounded-xl font-label-lg text-label-lg hover:scale-110 transition-transform active:scale-95"
                     onclick="
                       openRegisterModal({
                         name: 'Handmade Hair Clip Class',
